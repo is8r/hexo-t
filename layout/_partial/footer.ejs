@@ -1,0 +1,10 @@
+<footer id="footer" class="container">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="row">
+    <div id="footer-info" class="col-xs-12">
+      &copy; <%= date(new Date(), 'YYYY') %> <%= config.title %>
+    </div>
+  </div>
+</footer>

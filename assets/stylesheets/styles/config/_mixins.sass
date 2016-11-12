@@ -1,0 +1,23 @@
+// +import-noto
+=font($size: 1rem, $line-height: normal, $weight: normal)
+  // font-family: 'Noto Sans Japanese', san-serif
+  font-family: YuMincho, '游明朝',$serif
+  font-size: $size
+  font-weight: $weight
+  line-height: $line-height
+
++import-opensans
+=font-en($size: 1rem, $line-height: normal, $weight: normal)
+  font-family: 'Open Sans', $sans
+  font-size: $size
+  font-weight: $weight
+  line-height: $line-height
+
+=button
+  +button-flat(1rem, 2px 10px)
+
+=button-outline($size: 1rem)
+  +button-border($size, 2px 10px, #222)
+
+=input
+  +input-base

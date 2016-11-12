@@ -1,0 +1,214 @@
+@import "vendor/spuit/all"
+@import "styles/config/variables"
+@import "styles/config/mixins"
+
+html
+  font-size: 100%
+  +breakpoint-down(md)
+    font-size: 75%
+
+body
+  +font
+  color: $color-gray
+
+#header
+  padding-top: 2rem
+  padding-bottom: 2rem
+  h1
+    +font(1.4rem)
+    padding-top: 1rem
+    display: inline-block
+    +breakpoint-down(md)
+      display: block
+      text-align: center
+    a
+      font-size: inherit
+      color: $color-black
+  a
+    +font(1rem)
+    color: $color-black
+  nav
+    display: inline-block
+
+#search-form-wrap
+  position: relative
+  display: inline-block
+  margin-bottom: 2rem
+
+  input
+    +input
+    padding: 0.5rem
+    width: 100%
+  button
+    +button-base
+    +replace-fa("\f002", 1rem, 2rem)
+    position: absolute
+    top: 0.25rem
+    right: 0.25rem
+
+#sidebar
+  +breakpoint-down(md)
+    margin-top: 2rem
+    padding-top: 2rem
+    border-top: 1px dotted #eee
+  h3
+    +font(0.5rem)
+    color: $color-black
+  .widget
+    padding-bottom: 2rem
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+      li
+        +break-word
+        a
+          color: $color-black
+          // text-decoration: underline
+          &:hover
+            color: $color-key
+
+#main
+  margin-top: -2rem
+
+  .article
+    +body($color-black)
+
+    margin-bottom: 4rem
+    &:last-child
+      margin-bottom: 0
+
+    h1, h2, h3
+      position: relative
+      &:before
+        +font(1rem)
+        font-weight: 100
+        content: '#'
+        position: absolute
+        left: -5rem
+        color: #eee
+        text-align: right
+        width: 4rem
+        margin-top: 0.3rem
+    h2
+      &:before
+        content: '##'
+    h3
+      &:before
+        content: '###'
+    // p
+    //   &:before
+    //     +fa('\f1dd')
+
+  .article-meta
+    display: block
+    margin-top: -1.8rem
+    margin-bottom: 2rem
+    a
+      +font(0.7rem)
+      font-size: 0.7rem !important
+      text-decoration: none
+      color: #aaa
+      margin-left: 0.2rem
+      margin-right: 0.2rem
+      &:hover
+        text-decoration: underline
+        color: $color-key
+    .article-category
+      display: inline-block
+      a
+        &:before
+          // content: '#'
+          padding-right: 4px
+          +fa('\f07b')
+          opacity: 0.5
+    .article-tag-list
+      +reset-ul
+      a
+        &:before
+          padding-right: 2px
+          +fa('\f02b')
+          opacity: 0.5
+  .archives
+    .archive-article-header
+      h1
+        margin-top: 0
+        margin-bottom: 0
+      a
+        text-decoration: none
+        &:hover
+          text-decoration: underline
+      .archive-article-date
+        color: #aaa
+
+  .archive-year
+    +font(2.4rem)
+    color: $color-black
+    display: inline-block
+    padding-top: 1.5rem
+    padding-bottom: 1.5rem
+
+
+#footer
+  +font(0.8rem)
+  color: $color-black
+  padding-top: 8rem
+  padding-bottom: 2rem
+
+#article-nav
+  margin-top: 2rem
+  .article-nav-link-wrap
+    +button-outline(0.8rem)
+    border-color: #eee
+    &:hover
+      color: $color-key
+      border-color: $color-key
+      background: transparent
+    .article-nav-caption
+      font-size: 0.5rem
+      font-weight: 100
+      display: inline-block
+      opacity: 0.5
+    .article-nav-title
+      display: inline-block
+
+.indexxx
+  margin: 0 0 2rem 0
+  padding: 10px 10px
+  border: 1px solid #eee
+  background: #f8f8f8
+  &:empty
+    display: none
+  li
+    list-style: decimal
+    border-top: 1px dotted #ddd
+    padding: 0
+    &:first-child
+      border-top: none
+    a
+      font-size: 0.8rem !important
+      color: #777 !important
+      text-decoration: none !important
+      &:after
+        font-size: 0.5rem
+        content: ''
+      &:hover
+        color: $color-key !important
+
+.amzn
+  display: flex
+  position: relative
+  justify-content: flex-start
+  align-items: center
+  border: 1px solid #eee
+  padding: 10px
+  text-decoration: none !important
+  img
+    width: 25%
+    height: auto
+  &:before
+    display: none !important
+  &:hover
+    color: $color-key !important
+    border-color: $color-key !important
+
